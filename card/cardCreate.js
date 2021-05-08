@@ -10,7 +10,7 @@ function cardCreate(req, res) {
     newCard
         .save()
         .then(() => {
-            res.status(200).json("Card created");
+            res.status(200).json("Card createddd");
         })
         .catch((err) => {
             console.log(err);
