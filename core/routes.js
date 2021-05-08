@@ -1,4 +1,4 @@
-const cardRouter = require("../card/Routes");
+const cardRouter = require("../modules/card/Routes");
 
 function routes(app) {
     app.get('/', (req, res) => {
