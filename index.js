@@ -1,12 +1,15 @@
 const express = require('express');
-const routes = require('./routes');
-const bodyParser = require('./bodyParser')
+const cors = require("./core/cors");
+const routes = require('./core/routes');
+const bodyParser = require('./core/bodyParser')
+const dbConnection = require("./core/dbConnection");
 
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-// body parser
-// bodyParser(app);
+dbConnection();
+bodyParser(app);
+cors(app);
 routes(app);
 
 app.listen(PORT, () => {
