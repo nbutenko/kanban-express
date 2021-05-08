@@ -5,7 +5,7 @@ function cardDelete (req, res) {
 
     Card.deleteOne({ _id: cardId})
         .exec()
-        .then((result) => {
+        .then(() => {
             res.status(200).json("Card deleted");
         })
         .catch((err) => {
