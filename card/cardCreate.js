@@ -7,7 +7,6 @@ function cardCreate(req, res) {
         status: req.body.status,
         priority: req.body.priority,
     });
-    // console.log(newCard);
     newCard
         .save()
         .then(() => {
