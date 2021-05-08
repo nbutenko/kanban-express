@@ -1,16 +1,17 @@
-const card = require("./Model");
+const Card = require("./Model");
 
 function cardCreate(req, res) {
-    const newCard = new card({
+    const newCard = new Card({
         name: req.body.name,
         description: req.body.description,
         status: req.body.status,
         priority: req.body.priority,
     });
+    // console.log(newCard);
     newCard
         .save()
         .then(() => {
-            res.status(200).json("Card createddd");
+            res.status(200).json("Card created");
         })
         .catch((err) => {
             console.log(err);
