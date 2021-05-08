@@ -6,8 +6,8 @@ function cardUpdateById (req, res) {
 
     Card.updateOne({ _id: cardId}, newCard)
         .exec()
-        .then((result) => {
-            res.status(200).json(result);
+        .then(() => {
+            res.status(200).json("Card updated");
         })
         .catch((err) => {
             console.log(err);
