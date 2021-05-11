@@ -2,7 +2,6 @@ const User = require("./Model");
 
 function userCreate(req, res) {
     const newUser = new User({
-        userId: req.body.userId,
         email: req.body.email,
         password: req.body.password,
         firstName: req.body.firstName,
