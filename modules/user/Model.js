@@ -11,7 +11,7 @@ const userSchema = new Schema( {
         type: String,
         required: true,
         index: true,
-        select: false,
+        // select: false,
     },
     firstName: {
         type: String,
