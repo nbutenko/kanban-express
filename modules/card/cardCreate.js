@@ -6,6 +6,7 @@ function cardCreate(req, res) {
         description: req.body.description,
         status: req.body.status,
         priority: req.body.priority,
+        trash: false
     });
     newCard
         .save()

@@ -12,6 +12,7 @@ const cardSchema = new Schema({
   },
   status: String,
   priority: Number,
+  trash: Boolean,
 });
 
 module.exports = mongoose.model("Card", cardSchema);
