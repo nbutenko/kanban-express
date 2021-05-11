@@ -19,7 +19,7 @@ const userSchema = new Schema( {
         index: true,
         select: false,
     },
-    firstname: {
+    firstName: {
         type: String,
         required: true,
     },
