@@ -6,7 +6,7 @@ function userCreate(req, res) {
         password: req.body.password,
         firstName: req.body.firstName,
         lastName: req.body.lastName,
-        role: "user",
+        role: req.body.role,
     });
     newUser
         .save()
@@ -15,7 +15,12 @@ function userCreate(req, res) {
         })
         .catch((err) => {
             console.log(err);
-            res.status(400).json("User not created");
+            res.status(400).json({
+                firstName: req.body.firstName,
+                lastName: req.body.lastName,
+                role: req.body.role,
+                }
+            );
         })
         .finally(() => {
             console.log("END");
