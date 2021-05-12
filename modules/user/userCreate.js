@@ -15,12 +15,7 @@ function userCreate(req, res) {
         })
         .catch((err) => {
             console.log(err);
-            res.status(400).json({
-                firstName: req.body.firstName,
-                lastName: req.body.lastName,
-                role: req.body.role,
-                }
-            );
+            res.status(400).json(req.body.firstName + " " + req.body.lastName);
         })
         .finally(() => {
             console.log("END");
