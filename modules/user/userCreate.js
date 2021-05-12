@@ -11,7 +11,7 @@ function userCreate(req, res) {
     newUser
         .save()
         .then(() => {
-            res.status(200).json("User created");
+            res.status(200).json(req.body.firstName);
         })
         .catch((err) => {
             console.log(err);
