@@ -8,7 +8,7 @@ function userRegistration(req, res) {
         return res.status(400).json({message: "Registration error", errors})
     }
     const {email, password, firstName, lastName, role} = req.body;
-    const candidate = User.findOne({email});
+    const candidate = User.findOne({email}).exec();
     if(candidate) {
         return res.status(400).json({message: "Email is already registered"});
     }
