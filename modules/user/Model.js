@@ -6,11 +6,11 @@ const userSchema = new Schema( {
         type: String,
         required: true,
         index: true,
+        unique: true
     },
     password: {
         type: String,
         required: true,
-        index: true,
         // select: false,
     },
     firstName: {
@@ -24,6 +24,7 @@ const userSchema = new Schema( {
     role: {
         type: String,
         required: true,
+        default: "USER",
     },
 })
 
