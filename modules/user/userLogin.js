@@ -11,7 +11,7 @@ function userLogin(req, res){
         })
         .catch((err) => {
             console.log(err);
-            res.status(400).json("User login error");
+            res.status(400).json({message: "Login error"});
         })
 }
 
