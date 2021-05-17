@@ -1,6 +1,6 @@
 const User = require("./Model");
 
-function userCreate(req, res) {
+function userRegister(req, res) {
     const newUser = new User({
         email: req.body.email,
         password: req.body.password,
@@ -22,4 +22,4 @@ function userCreate(req, res) {
         });
 }
 
-module.exports = userCreate;
+module.exports = userRegister;

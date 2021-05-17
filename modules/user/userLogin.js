@@ -1,6 +1,6 @@
 const User = require("./Model");
 
-function userGetOneByEmailPass(req, res){
+function userLogin(req, res){
     const userEmail = req.body.email;
     const userPassword = req.body.password;
 
@@ -15,4 +15,4 @@ function userGetOneByEmailPass(req, res){
         })
 }
 
-module.exports = userGetOneByEmailPass;
+module.exports = userLogin;
