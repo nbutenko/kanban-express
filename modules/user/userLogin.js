@@ -20,7 +20,15 @@ function userLogin(req, res) {
                 res.status(400).json({message: "Wrong password"})
             }
             const token = generateAccessToken(result._id, result.role);
-            res.status(200).json({token});
+            res.status(200).json({
+                token,
+                user: {
+                    email: result.email,
+                    firstName: result.firstName,
+                    lastName: result.lastName,
+                    role: result.role
+                }
+            });
         })
         .catch((err) => {
             console.log(err);
