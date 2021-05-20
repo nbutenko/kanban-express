@@ -1,9 +1,12 @@
 const Card = require("./Model");
+const {cloudinary} = require("../../utils/cloudinary")
 
 function cardCreate(req, res) {
+    cloudinary.uploader.upload(req.body.file);
     const newCard = new Card({
         name: req.body.name,
         description: req.body.description,
+        file: req.body.file,
         status: req.body.status,
         priority: req.body.priority,
         trash: false

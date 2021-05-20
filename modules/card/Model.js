@@ -12,6 +12,7 @@ const cardSchema = new Schema({
   },
   status: String,
   priority: Number,
+  file: String,
   trash: Boolean,
 });
 
