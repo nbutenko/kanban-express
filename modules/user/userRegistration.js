@@ -2,18 +2,18 @@ const User = require("./Model");
 const bcrypt = require('bcryptjs');
 const { validationResult} = require("express-validator");
 
-function userRegistration(req, res) {
+async function userRegistration(req, res) {
     const errors = validationResult(req);
-    if(!errors.isEmpty()){
+    if (!errors.isEmpty()) {
         return res.status(400).json({message: "Registration error", errors})
     }
     const {email, password, firstName, lastName, role} = req.body;
     //TODO: not working
-    // const candidate = User.findOne({email});
-    // if(candidate) {
-    //     console.log(candidate);
-    //     return res.status(400).json({message: "Email is already registered"});
-    // }
+    const candidate = await User.findOne({email});
+    if (candidate) {
+        console.log(candidate);
+        return res.status(400).json({message: "Email is already registered"});
+    }
 
     const hashPassword = bcrypt.hashSync(password, 7);
     const newUser = new User({email, password: hashPassword, firstName, lastName, role});

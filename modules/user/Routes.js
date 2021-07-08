@@ -3,8 +3,8 @@ const userGetAll = require("./userGetAll");
 const userDeleteById = require("./userDeleteById");
 const userLogin = require("./userLogin");
 const {check} = require("express-validator");
-// const authMiddleware = require("./middleware/authMiddleware");
-const roleMiddleware = require("./middleware/roleMiddleware");
+// const authMiddleware = require("../middleware/authMiddleware");
+const roleMiddleware = require("../../core/middleware/roleMiddleware");
 
 const {Router} = require("express");
 const router = Router();
